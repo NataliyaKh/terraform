@@ -30,3 +30,51 @@ variable "vpc_name" {
   default     = "develop"
   description = "VPC network&subnet name"
 }
+
+variable "disks_resources" {
+    type    = object({
+        disk_type = string
+        disk_size = number
+    })
+    default = {
+        disk_type="network-hdd"
+        disk_size=1
+    }
+    description = "VMs resources"
+}
+
+variable "vms_name" {
+  type = string
+  default = "web"
+  description = "VMs names"
+}
+
+variable "vms_name_storage" {
+  type = string
+  default = "storage"
+  description = "VMs names"
+}
+
+variable "vms_resources" {
+    type    = object({
+        platform_id = string
+        cores   =   number
+        memory  =   number
+        core_fraction   =   number
+        disk_type = string
+        disk_size = number
+        preemptible = bool
+        nat = bool
+    })
+    default = {
+        platform_id="standard-v1"
+        cores=2
+        memory=1
+        core_fraction=20
+        disk_type="network-ssd"
+        disk_size=1
+        preemptible=true
+        nat=true
+    }
+    description = "VMs resources"
+}
