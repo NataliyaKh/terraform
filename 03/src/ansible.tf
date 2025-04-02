@@ -5,6 +5,6 @@ resource "local_file" "inventory" {
        {
         webservers = yandex_compute_instance.web,
         databases = yandex_compute_instance.for_each,
-        storage = yandex_compute_instance.storage
+        storage = [yandex_compute_instance.storage]
        })
 }
