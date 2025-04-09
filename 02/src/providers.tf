@@ -4,13 +4,12 @@ terraform {
       source = "yandex-cloud/yandex"
     }
   }
-  required_version = ">=1.5"
+  required_version = "~>1.11.0"
 }
 
 provider "yandex" {
-  # token     = var.token
-  cloud_id                 = var.cloud_id
-  folder_id                = var.folder_id
-  zone                     = var.default_zone
-  service_account_key_file = file("~/.authorized_key.json")
+  cloud_id                 = "b1gb4n5oop4thmmubnlh"
+  folder_id                = "b1gnrgrrnoj95l4hbt8j"
+  service_account_key_file = file("/home/vboxuser/authorized_key.json")
+  #zone                     = "ru-central1-a" #(Optional) 
 }
